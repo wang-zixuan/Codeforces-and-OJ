@@ -1,3 +1,3 @@
-# Just for recoding the track.
+# Recording the track of Codeforces
 
 记录 cf 刷题。

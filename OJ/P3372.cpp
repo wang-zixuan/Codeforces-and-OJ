@@ -10,8 +10,8 @@ void build(LL s, LL t, LL p) {
         return;
     }
     LL m = (s + t) / 2;
-    build(m + 1, t, p * 2 + 1); build(s, m, p * 2);
-
+    build(m + 1, t, p * 2 + 1); 
+    build(s, m, p * 2);
 
     d[p] = d[p * 2] + d[p * 2 + 1];
 }
@@ -31,12 +31,15 @@ void update(LL l, LL r, LL c, LL s, LL t, LL p) {
         b[p * 2 + 1] += b[p];
     }
     b[p] = 0;
+
     if (l <= m) {
         update(l, r, c, s, m, p * 2);
     }
+
     if (r > m) {
         update(l, r, c, m + 1, t, p * 2 + 1);
     }
+
     d[p] = d[p * 2] + d[p * 2 + 1];
 }
 
@@ -62,6 +65,7 @@ LL getsum(LL l, LL r, LL s, LL t, LL p) {
     if (r > m) {
         sum += getsum(l, r, m + 1, t, p * 2 + 1);
     }
+    
     return sum;
 }
 

@@ -22,9 +22,7 @@ void unionSet(int x, int y) {
     if (x == y)
         return;
 
-    else {
-        fa[x] = y; 
-    }
+    fa[x] = y;
 }
 
 int main() {
